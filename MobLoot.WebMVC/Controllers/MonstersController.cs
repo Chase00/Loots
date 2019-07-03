@@ -29,17 +29,26 @@ namespace MobLoot.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(MonstersCreate model) // Takes in the user's input
         {
-            if (!ModelState.IsValid) // Checks if it's valid
-            {
-                return View(model); // If not valid, return what they input (as an error)
-            }
+            if (!ModelState.IsValid) return View(model); // If the input is not valid, return what they input (error) & do not send 
 
+            var service = CreateMonstersService();
+
+            if (service.CreateMonster(model))
+            {
+                TempData["SaveResult"] = $"{model.MonsterName} was successfully created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Monster could not be created.");
+
+            return View(model);
+        }
+
+        private MonstersService CreateMonstersService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId()); // Gets the user's ID when the data is created
             var service = new MonstersService(userId); // Creates the new monster under their userID
-
-            service.CreateMonster(model); // Creates the Monster using their input (model)
-
-            return RedirectToAction("Index"); // Returns the user to the index page once the monster is created
+            return service;
         }
     }
 }
