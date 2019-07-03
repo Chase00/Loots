@@ -34,20 +34,20 @@ namespace MobLoot.Services
             }
         }
 
-        public IEnumerable<MonstersListItem> GetMonsters() // Allows us to see the specific notes that belong to a specific user
+        public IEnumerable<MonstersListItem> GetMonsters() // Allows us to see the specific monsters that belong to a specific user
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx
                     .Monsters
-                    .Where(e => e.OwnerId == _userId)
+                    .Where(entity => entity.OwnerId == _userId)
                     .Select(
-                        e =>
+                        entity =>
                             new MonstersListItem
                             {
-                                MonsterName = e.MonsterName,
-                                MonsterDesc = e.MonsterDesc,
-                                MonsterLevel = e.MonsterLevel,
+                                MonsterName = entity.MonsterName,
+                                MonsterDesc = entity.MonsterDesc,
+                                MonsterLevel = entity.MonsterLevel,
                             }
                     );
                 return query.ToArray();

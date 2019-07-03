@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MonstersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MobLoot.Data\MobLoot.Data.csproj">
+      <Project>{321fe9c0-ed82-47d1-b0a8-cd487f9431df}</Project>
+      <Name>MobLoot.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MobLoot.Models\MobLoot.Models.csproj">
+      <Project>{55ab777c-6e59-479a-81ec-2a9a89b183db}</Project>
+      <Name>MobLoot.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
