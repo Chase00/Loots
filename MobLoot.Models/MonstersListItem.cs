@@ -9,9 +9,9 @@ namespace MobLoot.Models
 {
     public class MonstersListItem
     {
-        [Display(Name = "Monster: ")]
+        [Display(Name = "Monster")]
         public string MonsterName { get; set; }
-        [Display(Name = "Level: ")]
+        [Display(Name = "Level")]
         public short MonsterLevel { get; set; }
         [Display(Name = "Description")]
         public string MonsterDesc { get; set; }

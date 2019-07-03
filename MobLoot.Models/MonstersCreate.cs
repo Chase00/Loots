@@ -5,22 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobLoot.Data
+namespace MobLoot.Models
 {
-    public class Monsters
+    public class MonstersCreate
     {
-        [Key]
-        public int MonsterId { get; set; }
         [Required]
-        public Guid OwnerId { get; set; }
-        [Required]
+        [Display(Name = "Monster Name:")]
+        [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(30, ErrorMessage = "There are too many characters in this field.")]
         public string MonsterName { get; set; }
         [Required]
         [MaxLength(400, ErrorMessage = "There are too many characters in this field.")]
+        [Display(Name = "Description:")]
         public string MonsterDesc { get; set; }
         [Required]
-        [Range(1, 200, ErrorMessage = "Please choose a number between 1 and 200")]
-        public short MonsterLevel { get; set; }
+        [MaxLength(4, ErrorMessage = "Error: Maxium level is 9999")]
+        [Display(Name = "Level:")]
+        public string MonsterLevel { get; set; }
     }
 }
