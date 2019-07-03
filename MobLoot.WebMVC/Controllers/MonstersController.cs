@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using MobLoot.Data;
 using MobLoot.Models;
 using MobLoot.Services;
 using System;
@@ -50,5 +51,11 @@ namespace MobLoot.WebMVC.Controllers
             var service = new MonstersService(userId); // Creates the new monster under their userID
             return service;
         }
-    }
-}
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateMonstersService();
+            var model = svc.GetMonsterById();
+
+            return View(model);
+        }

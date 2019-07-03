@@ -1,5 +1,6 @@
 ﻿using MobLoot.Data;
 using MobLoot.Models;
+using MobLoot.Models.Monsters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,26 @@ namespace MobLoot.Services
                             }
                     );
                 return query.ToArray();
+            }
+        }
+        //8.01
+
+        public MonstersDetails GetMonsterById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Monsters
+                        .Single(e => e.MonsterId == id && e.OwnerId == _userId);
+                return
+                    new MonstersDetails
+                    {
+                        MonsterDetailsId = entity.MonsterId,
+                        MonsterName = entity.MonsterName,
+                        MonsterDesc = entity.MonsterDesc,
+                        MonsterLevel = entity.MonsterLevel
+                    };
             }
         }
     }
