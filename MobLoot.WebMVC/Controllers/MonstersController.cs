@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using MobLoot.Data;
 using MobLoot.Models;
+using MobLoot.Models.Monsters;
 using MobLoot.Services;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,44 @@ namespace MobLoot.WebMVC.Controllers
             var svc = CreateMonstersService();
             var model = svc.GetMonsterById(id);
 
+            return View(model);
+        }
+        public ActionResult Edit(int id)
+        {
+            var service = CreateMonstersService();
+            var detail = service.GetMonsterById(id);
+            var model =
+                new MonstersEdit
+                {
+                    MonsterId = detail.MonsterId,
+                    MonsterName = detail.MonsterName,
+                    MonsterDesc = detail.MonsterDesc,
+                    MonsterLevel = detail.MonsterLevel
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, MonstersEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.MonsterId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateMonstersService();
+
+            if (service.UpdateMonster(model))
+            {
+                TempData["SaveResult"] = "Your note was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your note could not be updated.");
             return View(model);
         }
     }

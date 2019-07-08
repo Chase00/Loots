@@ -1,5 +1,6 @@
 ﻿using MobLoot.Data;
 using MobLoot.Models;
+using MobLoot.Models.Monsters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,6 +71,23 @@ namespace MobLoot.Services
                         MonsterDesc = entity.MonsterDesc,
                         MonsterLevel = entity.MonsterLevel
                     };
+            }
+        }
+        public bool UpdateMonster(MonstersEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Monsters
+                        .Single(e => e.MonsterId == model.MonsterId && e.OwnerId == _userId);
+
+                entity.MonsterId = model.MonsterId;
+                entity.MonsterName = model.MonsterName;
+                entity.MonsterDesc = model.MonsterDesc;
+                entity.MonsterLevel = model.MonsterLevel;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
