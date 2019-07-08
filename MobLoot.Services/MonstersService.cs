@@ -1,6 +1,5 @@
 ﻿using MobLoot.Data;
 using MobLoot.Models;
-using MobLoot.Models.Monsters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,16 +45,15 @@ namespace MobLoot.Services
                         entity =>
                             new MonstersListItem
                             {
+                                MonsterId = entity.MonsterId,
                                 MonsterName = entity.MonsterName,
                                 MonsterDesc = entity.MonsterDesc,
-                                MonsterLevel = entity.MonsterLevel,
+                                MonsterLevel = entity.MonsterLevel
                             }
                     );
                 return query.ToArray();
             }
         }
-        //8.01
-
         public MonstersDetails GetMonsterById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -67,7 +65,7 @@ namespace MobLoot.Services
                 return
                     new MonstersDetails
                     {
-                        MonsterDetailsId = entity.MonsterId,
+                        MonsterId = entity.MonsterId,
                         MonsterName = entity.MonsterName,
                         MonsterDesc = entity.MonsterDesc,
                         MonsterLevel = entity.MonsterLevel

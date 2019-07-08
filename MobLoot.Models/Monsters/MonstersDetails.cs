@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobLoot.Models.Monsters
+namespace MobLoot.Models
 {
     public class MonstersDetails
     {
-        public int MonsterDetailsId
+        public int MonsterId { get; set; }
         [Display(Name ="Monster Name")]
         public string MonsterName { get; set; }
         [Display(Name = "Level")]

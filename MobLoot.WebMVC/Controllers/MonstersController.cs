@@ -48,14 +48,16 @@ namespace MobLoot.WebMVC.Controllers
         private MonstersService CreateMonstersService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId()); // Gets the user's ID when the data is created
-            var service = new MonstersService(userId); // Creates the new monster under their userID
+            var service = new MonstersService(userId); // Creates the new monster under their userID // 8.02
             return service;
         }
 
         public ActionResult Details(int id)
         {
             var svc = CreateMonstersService();
-            var model = svc.GetMonsterById();
+            var model = svc.GetMonsterById(id);
 
             return View(model);
         }
+    }
+}
