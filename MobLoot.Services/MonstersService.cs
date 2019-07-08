@@ -90,5 +90,20 @@ namespace MobLoot.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteMonster(int MonsterId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Monsters
+                        .Single(e => e.MonsterId == MonsterId && e.OwnerId == _userId);
+
+                ctx.Monsters.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

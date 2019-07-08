@@ -98,5 +98,28 @@ namespace MobLoot.WebMVC.Controllers
             ModelState.AddModelError("", "Your note could not be updated.");
             return View(model);
         }
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateMonstersService();
+            var model = svc.GetMonsterById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteTheMonster(int id)
+        {
+            var service = CreateMonstersService();
+
+            var model = service.GetMonsterById(id);
+
+            service.DeleteMonster(id);
+
+            TempData["SaveResult"] = $"{model.MonsterName} has been deleted";
+            return RedirectToAction("Index");
+        }
     }
 }

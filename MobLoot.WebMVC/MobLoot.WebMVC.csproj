@@ -239,6 +239,7 @@
     <Content Include="Views\Monsters\Create.cshtml" />
     <Content Include="Views\Monsters\Details.cshtml" />
     <Content Include="Views\Monsters\Edit.cshtml" />
+    <Content Include="Views\Monsters\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
