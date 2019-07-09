@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MobLoot.Services
 {
-    class LootService
+    public class LootService
     {
         // Sets the current logged in user to the user that will recieve their information
         private readonly Guid _userId;
