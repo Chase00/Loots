@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LootController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MonstersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -240,6 +241,8 @@
     <Content Include="Views\Monsters\Details.cshtml" />
     <Content Include="Views\Monsters\Edit.cshtml" />
     <Content Include="Views\Monsters\Delete.cshtml" />
+    <Content Include="Views\Loot\Index.cshtml" />
+    <Content Include="Views\Loot\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -37,7 +37,7 @@ namespace MobLoot.WebMVC.Controllers
 
             if (service.CreateMonster(model))
             {
-                TempData["SaveResult"] = $"{model.MonsterName} was successfully created.";
+                TempData["SaveResult"] = $"{model.MonsterName} was successfully created";
                 return RedirectToAction("Index");
             };
 
