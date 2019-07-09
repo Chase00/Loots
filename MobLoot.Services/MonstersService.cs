@@ -52,7 +52,8 @@ namespace MobLoot.Services
                                 MonsterLevel = entity.MonsterLevel
                             }
                     );
-                return query.ToArray();
+                return query.OrderBy(prod => prod.MonsterName).ToArray();
+
             }
         }
         public MonstersDetails GetMonsterById(int id)

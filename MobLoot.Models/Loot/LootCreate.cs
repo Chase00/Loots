@@ -18,6 +18,6 @@ namespace MobLoot.Models.Loot
         [MaxLength(300, ErrorMessage = "There are too many characters in this field.")]
         public string LootDesc { get; set; }
         [Required]
-        public string MonsterName { get; set; }
+        public int MonsterId { get; set; }
     }
 }
