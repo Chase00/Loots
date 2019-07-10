@@ -60,5 +60,42 @@ namespace MobLoot.Services
                 return query.OrderBy(prod => prod.MonsterName).ToArray();
             }
         }
+        public LootDetails GetLootById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Loot
+                        .Single(e => e.LootId == id && e.OwnerId == _userId);
+                return
+                    new LootDetails
+                    {
+                        LootId = entity.LootId,
+                        LootName = entity.LootName,
+                        LootDesc = entity.LootDesc,
+                        MonsterId = entity.MonsterId,
+                        MonsterName = entity.Monsters.MonsterName
+                    };
+            }
+        }
+        public bool UpdateLoot(LootEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Loot
+                        .Single(e => e.LootId == model.LootId && e.OwnerId == _userId);
+
+                entity.LootId = model.LootId;
+                entity.LootName = model.LootName;
+                entity.LootDesc = model.LootDesc;
+                entity.MonsterId = model.MonsterId;
+
+                return ctx.SaveChanges() == 1; // HEY THIS IS WHAT YOU LAST DID
+            }
+        }
+
     }
 }

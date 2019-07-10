@@ -243,6 +243,8 @@
     <Content Include="Views\Monsters\Delete.cshtml" />
     <Content Include="Views\Loot\Index.cshtml" />
     <Content Include="Views\Loot\Create.cshtml" />
+    <Content Include="Views\Loot\Details.cshtml" />
+    <Content Include="Views\Loot\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

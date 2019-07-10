@@ -1,0 +1,42 @@
+﻿@model MobLoot.Models.Loot.LootDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LootDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LootName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LootName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LootDesc)
+        </dt> 
+
+        <dd>
+            @Html.DisplayFor(model => model.LootDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MonsterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonsterName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LootId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
