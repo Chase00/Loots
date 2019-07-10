@@ -96,6 +96,20 @@ namespace MobLoot.Services
                 return ctx.SaveChanges() == 1; // HEY THIS IS WHAT YOU LAST DID
             }
         }
+        public bool DeleteLoot(int LootId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Loot
+                        .Single(e => e.LootId == LootId && e.OwnerId == _userId);
+
+                ctx.Loot.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
     }
 }

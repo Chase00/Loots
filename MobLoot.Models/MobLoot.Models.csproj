@@ -55,7 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Loot\LootCreate.cs" />
-    <Compile Include="Loot\LootDelete.cs" />
     <Compile Include="Loot\LootDetails.cs" />
     <Compile Include="Loot\LootEdit.cs" />
     <Compile Include="Loot\LootListItem.cs" />

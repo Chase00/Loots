@@ -104,5 +104,28 @@ namespace MobLoot.WebMVC.Controllers
             ModelState.AddModelError("", ($"{model.LootName} could not be updated."));
             return View(model);
         }
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateLootService();
+            var model = svc.GetLootById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteTheMonster(int id)
+        {
+            var service = CreateLootService();
+
+            var model = service.GetLootById(id);
+
+            service.DeleteLoot(id);
+
+            TempData["SaveResult"] = $"{model.LootName} has been deleted";
+            return RedirectToAction("Index");
+        }
     }
 }

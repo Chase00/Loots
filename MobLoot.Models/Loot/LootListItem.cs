@@ -10,11 +10,11 @@ namespace MobLoot.Models.Loot
     public class LootListItem
     {
         public int LootId { get; set; }
-        [Display(Name = "Item: ")]
+        [Display(Name = "Item")]
         public string LootName { get; set; }
-        [Display(Name = "Description:")]
+        [Display(Name = "Description")]
         public string LootDesc { get; set; }
-        [Display(Name = "Monster:")]
+        [Display(Name = "Monster")]
         public string MonsterName { get; set; }
     }
 }

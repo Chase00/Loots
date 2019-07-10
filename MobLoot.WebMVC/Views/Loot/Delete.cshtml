@@ -1,4 +1,4 @@
-﻿@model MobLoot.Models.MonstersDetails
+﻿@model MobLoot.Models.Loot.LootDetails
 
 @{
     ViewBag.Title = "Delete";
@@ -8,9 +8,25 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>MonstersDetails</h4>
+    <h4>LootDetails</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LootName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LootName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LootDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LootDesc)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.MonsterName)
         </dt>
@@ -20,19 +36,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MonsterLevel)
+            @Html.DisplayNameFor(model => model.MonsterId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MonsterLevel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MonsterDesc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MonsterDesc)
+            @Html.DisplayFor(model => model.MonsterId)
         </dd>
 
     </dl>
