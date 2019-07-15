@@ -93,7 +93,7 @@ namespace MobLoot.Services
                 entity.LootDesc = model.LootDesc;
                 entity.MonsterId = model.MonsterId;
 
-                return ctx.SaveChanges() == 1; // HEY THIS IS WHAT YOU LAST DID
+                return ctx.SaveChanges() == 1;
             }
         }
         public bool DeleteLoot(int LootId)

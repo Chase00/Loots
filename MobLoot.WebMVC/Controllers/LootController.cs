@@ -126,6 +126,6 @@ namespace MobLoot.WebMVC.Controllers
 
             TempData["SaveResult"] = $"{model.LootName} has been deleted";
             return RedirectToAction("Index");
-        }
+        } 
     }
 }

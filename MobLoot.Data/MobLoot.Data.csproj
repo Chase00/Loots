@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="Migrations\201907021549226_InitialCreate.cs" />
@@ -67,6 +68,10 @@
     <Compile Include="Migrations\201907091322419_LootTable.cs" />
     <Compile Include="Migrations\201907091322419_LootTable.Designer.cs">
       <DependentUpon>201907091322419_LootTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907111758193_EventDbAdd.cs" />
+    <Compile Include="Migrations\201907111758193_EventDbAdd.Designer.cs">
+      <DependentUpon>201907111758193_EventDbAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Monsters.cs" />
@@ -85,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907091322419_LootTable.resx">
       <DependentUpon>201907091322419_LootTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907111758193_EventDbAdd.resx">
+      <DependentUpon>201907111758193_EventDbAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
