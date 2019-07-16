@@ -247,10 +247,10 @@
     <Content Include="Views\Loot\Details.cshtml" />
     <Content Include="Views\Loot\Edit.cshtml" />
     <Content Include="Views\Loot\Delete.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Event\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

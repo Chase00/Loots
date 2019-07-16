@@ -57,7 +57,7 @@ namespace MobLoot.Services
                             }
                     );
                 // Returns the Information
-                return query.OrderBy(prod => prod.MonsterName).ToArray();
+                return query.OrderBy(prod => prod.MonsterName).ToList();
             }
         }
         public LootDetails GetLootById(int id)

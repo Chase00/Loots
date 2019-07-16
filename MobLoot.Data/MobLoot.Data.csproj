@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201907111758193_EventDbAdd.Designer.cs">
       <DependentUpon>201907111758193_EventDbAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907151951519_ChangedEvent.cs" />
+    <Compile Include="Migrations\201907151951519_ChangedEvent.Designer.cs">
+      <DependentUpon>201907151951519_ChangedEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Monsters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907111758193_EventDbAdd.resx">
       <DependentUpon>201907111758193_EventDbAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907151951519_ChangedEvent.resx">
+      <DependentUpon>201907151951519_ChangedEvent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

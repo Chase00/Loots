@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Event\EventChoose.cs" />
+    <Compile Include="Event\Event.cs" />
     <Compile Include="Loot\LootCreate.cs" />
     <Compile Include="Loot\LootDetails.cs" />
     <Compile Include="Loot\LootEdit.cs" />
