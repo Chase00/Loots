@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Event\Event.cs" />
+    <Compile Include="Event\EventModel.cs" />
     <Compile Include="Loot\LootCreate.cs" />
     <Compile Include="Loot\LootDetails.cs" />
     <Compile Include="Loot\LootEdit.cs" />
@@ -68,6 +68,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MobLoot.Data\MobLoot.Data.csproj">
+      <Project>{321fe9c0-ed82-47d1-b0a8-cd487f9431df}</Project>
+      <Name>MobLoot.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

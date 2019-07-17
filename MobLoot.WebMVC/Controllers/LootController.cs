@@ -23,7 +23,7 @@ namespace MobLoot.WebMVC.Controllers
 
             return View(model);
         }
-        public ActionResult Create()
+        public ActionResult Create() // ViewBag to bring the information to the drop down list to access the Monsters
         {
             var monsters = _db.Monsters.ToList().Where(t => t.OwnerId == Guid.Parse(User.Identity.GetUserId()));
             ViewBag.MonsterId = new SelectList(monsters, "MonsterId", "MonsterName");
@@ -32,16 +32,16 @@ namespace MobLoot.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(LootCreate model)
+        public ActionResult Create(LootCreate model) //POST: Takes in written the information as 'model'
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) return View(model); // Checks if the input requirements have been met. If not, return what the user wrote in the box (error)
 
-            var service = CreateLootService();
+            var service = CreateLootService(); // Service is set to the user's information (euid)
 
-            if (service.CreateLoot(model))
+            if (service.CreateLoot(model)) // Sends the information to the service (CreateLoot)
             {
-                TempData["SaveResult"] = "Your note was created.";
-                return RedirectToAction("Index");
+                TempData["SaveResult"] = $"{model.LootName} has been created."; // If it was sent, send a confirmation message
+                return RedirectToAction("Index"); // Returns to the index page (list view)
             };
 
             ModelState.AddModelError("", $"{model.LootName} could not be created.");
@@ -49,11 +49,11 @@ namespace MobLoot.WebMVC.Controllers
             return View(model);
         }
 
-        private LootService CreateLootService()
+        private LootService CreateLootService() // Verification to set the new information to the user's list
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new LootService(userId);
-            return service;
+            var userId = Guid.Parse(User.Identity.GetUserId()); // Gets the user's Id
+            var service = new LootService(userId); // Sets service to the logged in user as the Guid
+            return service; // Returns the user's id
         }
         public ActionResult Details(int id)
         {

@@ -13,6 +13,7 @@ namespace MobLoot.Data
         [Key]
         public Guid OwnerId { get; set; }
 
+        [Required]
         [ForeignKey(nameof(Monsters))]
         public int MonsterId { get; set; }
         public virtual Monsters Monsters { get; set; }

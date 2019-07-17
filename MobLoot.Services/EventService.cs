@@ -1,5 +1,6 @@
 ﻿using MobLoot.Data;
 using MobLoot.Models;
+using MobLoot.Models.Event;
 using MobLoot.Models.Loot;
 using System;
 using System.Collections.Generic;
@@ -17,30 +18,29 @@ namespace MobLoot.Services
         {
             _userId = userId;
         }
-        //public IEnumerable<LootListItem> GetLoot()
-        //{
-        //    // Calls the database
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        // sets the database to 'query'
-        //        var query = ctx
-        //            .Loot
-        //            .Where(entity => entity.OwnerId == _userId) // .Where filters to check to verify the logged in user is the creator
-        //            .Select(
-        //                entity => // Commands the entity to go to a new instance of LootListItem
-        //                    new LootListItem
-        //                    {
-        //                        // Sets the class to take in the model information (What the user inputs)
-        //                        LootId = entity.LootId,
-        //                        LootName = entity.LootName,
-        //                        LootDesc = entity.LootDesc,
-        //                        MonsterName = entity.Monsters.MonsterName
 
-        //                    }
-        //            );
-        //        // Returns the Information
-        //        return query.OrderBy(prod => prod.MonsterName).ToArray();
-        //    }
-        //}
+        public EventModel RandomLoot(EventModel model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var lootList = ctx.Loot.Where(e => e.OwnerId == _userId && e.MonsterId == model.MonsterId).ToList();
+                var random = new Random(); // random
+                var lengthList = lootList.Count;
+                var genNum = random.Next(0, lengthList);
+                int getList = lootList[genNum].LootId;
+
+                //var index = random.Next(lootList.Count); //Counting items in the LootList and giving a random number from the list
+
+                return new EventModel()
+                {
+                    MonsterId = model.MonsterId,
+                    LootId = getList,
+                    LootName = lootList[genNum].LootName
+
+                    
+                };
+            }
+        }
     }
+    // returning the loot item from that random pick as a string 
 }

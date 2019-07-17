@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace MobLoot.Models.Event
 {
-    public class Event
+    public class EventModel
     {
         public int MonsterId { get; set; }
-        public int LootId { get; set; }
+        public int LootId { get; set; } 
+        public string LootName { get; set; }
     }
 }
