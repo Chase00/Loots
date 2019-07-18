@@ -1,6 +1,13 @@
-﻿body {
+﻿html {
+    /* try to figure out smooth scrolling */
+}
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #2e2e2e;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%232e2e2e' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%232c2c2c' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23292929' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23272727' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23252525' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23222222' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23202020' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%231e1e1e' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%231c1c1c' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%231a1a1a' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23171717' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23151515' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23131313' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23101010' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%230d0d0d' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23090909' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23050505' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23010101' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +28,149 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+body, html {
+    height: 100%;
+}
+
+/* Place text in the middle of the image */
+.jumbotron h1 {
+    text-align: center;
+    color: #6df648;
+    font-size: 150px;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.83);
+}
+
+.jumbotron {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/pixelheader.jpg");
+    /* Set a specific height */
+    height: 50%;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.container .jumbotron {
+    border-radius: 0px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+
+.navbar-inverse {
+    box-shadow: 10px 8px 5px 0px rgba(0,0,0,0.45);
+    border-color: none;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 0px;
+}
+
+.lead{ /* centers the arrow element in header */
+    text-align: center;
+}
+
+.navbar-inverse .navbar-nav > li > a { /* Navigation bar text color */
+    color: #6df648;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover { /* Navigation bar text color */
+
+    color: #ffffff;
+    background-color: #161616;
+    transition: 0.3s;
+    animation-name: textpulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+p{
+    color: #c6c6c6;
+}
+
+
+.titles {
+    color: #6df648;
+    font-family: 'Amatic SC', cursive, Arial;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+@keyframes textpulse {
+    from {
+        color: #6df648;
+    }
+
+    50% {
+        color: #ffffff;
+    }
+
+    to {
+        color: #6df648;
+    }
+}
+
+.boneicon {
+    height: 35px;
+    width: 35px;
+}
+
+@keyframes pulse {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.boneicon:hover {
+    height: 35px;
+    width: 35px;
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes arrowpulse {
+    from {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.arrow {
+    width: 100px;
+    height: 100px;
+    animation-name: arrowpulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.button {
+    background-color: none;
+    border-color: #6df648;
+    border-width: 3px;
+    border-radius: 15px;
+    color: #6df648;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover{
+    border-color: white;
+    color: white;
+    transition: 0.5s;
 }

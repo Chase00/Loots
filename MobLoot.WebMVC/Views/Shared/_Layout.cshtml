@@ -6,18 +6,41 @@
     <title>@ViewBag.Title - MobLoots!</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/Site.css")
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+            font-family: 'Amatic SC', cursive, Arial;
+            font-size: 30px;
+            font-weight: 600;
+        }
 
+        .header-text {
+            font-family: 'Amatic SC', cursive, Arial;
+            font-size: 150px;
+            font-weight: 600;
+        }
+
+        .description, .button{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+        }
+
+    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle font" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("MobLoots!", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/Content/assets/Bone.png" class="boneicon" />
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -36,8 +59,8 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - MobLoots!</p>
+        <footer class="footer" style="text-align: center;">
+            <p class="navbar">&copy; @DateTime.Now.Year - Loots!</p>
         </footer>
     </div>
 

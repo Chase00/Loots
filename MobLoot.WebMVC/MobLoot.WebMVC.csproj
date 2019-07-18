@@ -182,6 +182,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\arrowdown.png" />
+    <Content Include="Content\assets\Bone.png" />
+    <Content Include="Content\assets\Dragon.png" />
+    <Content Include="Content\assets\DragonLined.png" />
+    <Content Include="Content\assets\helmet.png" />
+    <Content Include="Content\assets\pixelheader.jpg" />
+    <Content Include="Content\assets\profile.png" />
+    <Content Include="Content\assets\sword.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -192,6 +200,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\MobLoot - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
