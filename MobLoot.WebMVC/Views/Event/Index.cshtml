@@ -4,30 +4,29 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Event</h2>
+<br />
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Simulate killing one of your monsters and receiving a loot!</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.MonsterId, "Monster: ", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("MonsterId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
+            <p class="table header-text" style="font-size: 35px; color: #6df648; text-align: center;">Select a Monster:</p>
+            <div class="col-md-12" id="dropbox">
+                @Html.DropDownList("MonsterId", null, string.Empty, htmlAttributes: new { @class = "form-control"})
                 @Html.ValidationMessageFor(model => model.MonsterId, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Generate Loot" class="btn btn-default" />
+        <div class="form-group" style="text-align: center;">
+            <div class="col-md-12">
+                <input type="submit" value="Generate Loot" class="button" />
             </div>
         </div>
     </div>
+
     if (TempData.ContainsKey("SaveResult"))
     {
         <div class="alert alert-info fade in" role="alert">
@@ -40,10 +39,28 @@
     }
 }
 
-<div>
-    @Html.ActionLink("History", "Index")
+<div class="row" id="content">
+
+    <div class="col-md-6">
+        <h2 class="titles">Simulate</h2>
+        <p class="description">
+            Placeholder Text ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+    </div>
+
+    <div class="col-md-6" style="text-align: center;">
+        <img src="~/Content/assets/sword.png" style="text-align: center; width: 300px; height: 300px;" />
+    </div>
 </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+<style>
+#dropbox{
+    text-align: center;
+}
+</style>
