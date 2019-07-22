@@ -86,6 +86,10 @@
     <Compile Include="Migrations\201907221417178_justanothermigration.Designer.cs">
       <DependentUpon>201907221417178_justanothermigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907221950313_newmigration.cs" />
+    <Compile Include="Migrations\201907221950313_newmigration.Designer.cs">
+      <DependentUpon>201907221950313_newmigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Monsters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907221417178_justanothermigration.resx">
       <DependentUpon>201907221417178_justanothermigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907221950313_newmigration.resx">
+      <DependentUpon>201907221950313_newmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -65,27 +65,37 @@
 
 @if (ViewBag.historyList != null)
 {
-    <table class="table header-text" style="font-size: 35px; color: #6df648;">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.MonsterName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LootName)
-            </th>
-            <th></th>
-        </tr>
-        @for (int i = 0; i < 10; i++)
-        {
-            <tr class="table-font">
-                <td>
-                    @ViewBag.historyList[i].MonsterName
-                </td>
-                <td>
-                    @ViewBag.historyList[i].LootName
-                </td>
+    int tempvar;
+    var size = ViewBag.historyList.Count;
+    if (size < 10)
+    {
+        tempvar = size;
+    }
+    else
+    {
+        tempvar = 10;
+    }
+        <table class="table header-text" style="font-size: 35px; color: #6df648;">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MonsterName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LootName)
+                </th>
+                <th></th>
             </tr>
-        }
+            @for (int i = 0; i < tempvar; i++)
+            {
+                <tr class="table-font">
+                    <td>
+                        @ViewBag.historyList[i].MonsterName
+                    </td>
+                    <td>
+                        @ViewBag.historyList[i].LootName
+                    </td>
+                </tr>
+            }
     </table>
 }
 
