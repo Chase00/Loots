@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Event.cs" />
+    <Compile Include="History.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Loot.cs" />
     <Compile Include="Migrations\201907021549226_InitialCreate.cs" />
@@ -76,6 +77,14 @@
     <Compile Include="Migrations\201907151951519_ChangedEvent.cs" />
     <Compile Include="Migrations\201907151951519_ChangedEvent.Designer.cs">
       <DependentUpon>201907151951519_ChangedEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907221359567_plswork.cs" />
+    <Compile Include="Migrations\201907221359567_plswork.Designer.cs">
+      <DependentUpon>201907221359567_plswork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907221417178_justanothermigration.cs" />
+    <Compile Include="Migrations\201907221417178_justanothermigration.Designer.cs">
+      <DependentUpon>201907221417178_justanothermigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Monsters.cs" />
@@ -100,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907151951519_ChangedEvent.resx">
       <DependentUpon>201907151951519_ChangedEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907221359567_plswork.resx">
+      <DependentUpon>201907221359567_plswork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907221417178_justanothermigration.resx">
+      <DependentUpon>201907221417178_justanothermigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

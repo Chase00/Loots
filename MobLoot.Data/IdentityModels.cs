@@ -34,6 +34,8 @@ namespace MobLoot.Data
 
         public DbSet<Monsters> Monsters { get; set; }
         public DbSet<Loot> Loot { get; set; }
+        public DbSet<History> History { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

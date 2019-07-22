@@ -15,7 +15,7 @@
         <div class="form-group">
             <p class="table header-text" style="font-size: 35px; color: #6df648; text-align: center;">Select a Monster:</p>
             <div class="col-md-12" id="dropbox">
-                @Html.DropDownList("MonsterId", null, string.Empty, htmlAttributes: new { @class = "form-control"})
+                @Html.DropDownList("MonsterId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MonsterId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -55,12 +55,40 @@
     </div>
 </div>
 
+<h2 class="titles">History</h2>
+
+<p class="description">
+    This is where your 10 most recent loots will appear!
+</p>
+
+<br />
+
+@if (ViewBag.historyList != null)
+{
+    <table class="table header-text" style="font-size: 35px; color: #6df648;">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MonsterName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LootName)
+            </th>
+            <th></th>
+        </tr>
+        @for (int i = 0; i < 10; i++)
+        {
+            <tr class="table-font">
+                <td>
+                    @ViewBag.historyList[i].MonsterName
+                </td>
+                <td>
+                    @ViewBag.historyList[i].LootName
+                </td>
+            </tr>
+        }
+    </table>
+}
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-
-<style>
-#dropbox{
-    text-align: center;
-}
-</style>

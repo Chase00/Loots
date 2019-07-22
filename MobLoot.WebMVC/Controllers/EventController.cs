@@ -20,6 +20,11 @@ namespace MobLoot.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var monsters = _db.Monsters.Where(t => t.OwnerId == userId).ToList();
             ViewBag.MonsterId = new SelectList(monsters, "MonsterId", "MonsterName");
+
+            var service = GetEventService();
+            var historyList = service.GetHistory();
+            ViewBag.historyList = historyList;
+
             return View();
         }
 
@@ -38,12 +43,23 @@ namespace MobLoot.WebMVC.Controllers
             }
             var service = GetEventService(); // Something something validate user
 
+            model.MonsterName = service.GetMonsterById(model.MonsterId).MonsterName;
+
             EventModel newModel = service.RandomLoot(model);
 
-            if (newModel != null)
+            newModel.MonsterName = model.MonsterName;
+
+            if (service.AddHistory(newModel))
             {
-                TempData["SaveResult"] = $"You received {newModel.LootName}!";
+                if (newModel != null)
+                {
+                    TempData["SaveResult"] = $"You received {newModel.LootName}!";
+                }
             }
+            var historyList = service.GetHistory();
+
+            ViewBag.historyList = historyList;
+
             return View();
         }
 

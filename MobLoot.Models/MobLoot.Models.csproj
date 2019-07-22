@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Event\EventModel.cs" />
+    <Compile Include="History\AddHistory.cs" />
+    <Compile Include="History\HistoryListItem.cs" />
     <Compile Include="Loot\LootCreate.cs" />
     <Compile Include="Loot\LootDetails.cs" />
     <Compile Include="Loot\LootEdit.cs" />
