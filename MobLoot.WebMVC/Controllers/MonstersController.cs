@@ -91,11 +91,11 @@ namespace MobLoot.WebMVC.Controllers
 
             if (service.UpdateMonster(model))
             {
-                TempData["SaveResult"] = "Your note was updated.";
+                TempData["SaveResult"] = $"{model.MonsterName} has been successfully updated";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your note could not be updated.");
+            ModelState.AddModelError("", $"{model.MonsterName} could not be updated");
             return View(model);
         }
         [ActionName("Delete")]
