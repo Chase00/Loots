@@ -189,6 +189,8 @@
     <Content Include="Content\assets\helmet.png" />
     <Content Include="Content\assets\pixelheader.jpg" />
     <Content Include="Content\assets\profile.png" />
+    <Content Include="Content\assets\scroll.png" />
+    <Content Include="Content\assets\ScrollOpen.png" />
     <Content Include="Content\assets\sword.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

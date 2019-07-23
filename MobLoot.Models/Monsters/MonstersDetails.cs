@@ -10,11 +10,11 @@ namespace MobLoot.Models
     public class MonstersDetails
     {
         public int MonsterId { get; set; }
-        [Display(Name ="Monster Name")]
+        [Display(Name ="Monster Name:")]
         public string MonsterName { get; set; }
-        [Display(Name = "Level")]
+        [Display(Name = "Level:")]
         public short MonsterLevel { get; set; }
-        [Display(Name = "Description")]
+        [Display(Name = "Description:")]
         public string MonsterDesc { get; set; }
     }
 }

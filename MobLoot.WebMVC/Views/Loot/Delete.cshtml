@@ -4,53 +4,26 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2 class="titles">Delete Loot</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3 class="boxtext">Are you sure you wish to delete <b>@Html.DisplayFor(model => model.LootName)</b>? :(</h3>
 <div>
-    <h4>LootDetails</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.LootName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LootName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LootDesc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LootDesc)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MonsterName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MonsterName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MonsterId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MonsterId)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
-
+        <br />
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn button" />
+            <br />
+            <br />
+            <p><a class="btn button" href="~/Loot">Back</a></p>
         </div>
     }
 </div>
+
+<style>
+    body {
+        text-align: center;
+    }
+</style>

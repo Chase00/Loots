@@ -53,7 +53,7 @@ namespace MobLoot.WebMVC.Controllers
             {
                 if (newModel != null)
                 {
-                    TempData["SaveResult"] = $"You received {newModel.LootName}!";
+                    TempData["SaveResult"] = $"{newModel.LootName}";
                 }
             }
             var historyList = service.GetHistory();

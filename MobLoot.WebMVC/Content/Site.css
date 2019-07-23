@@ -1,7 +1,4 @@
-﻿html {
-    /* try to figure out smooth scrolling */
-}
-body {
+﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: #2e2e2e;
@@ -94,6 +91,12 @@ p{
     color: #c6c6c6;
 }
 
+.boxtext {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #b7b6b6;
+    text-align: center;
+}
 
 .titles {
     color: #6df648;
@@ -193,6 +196,37 @@ p{
     border-radius: 10px;
 }
 
-footer{
+#dropbox {
+    width: 20%;
+    margin: 0 auto;
+}
+@media only screen and (max-width: 920px) {
+    #dropbox{
+        width: 40%;
+        margin: 0 auto;
+    }
+}
+footer {
     background-color: none;
+    text-align: center;
+}
+
+.bannerwrapper {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 69%;
+    color: #542e12;
+    font-size: 65px;
+    font-family: 'Amatic SC', Arial, sans-serif;
+    font-weight: bolder;
+}
+
+.banner {
+    display: table-cell;
+    vertical-align: middle;
+    background-image: url(assets/ScrollOpen.png);
+    height: 300px;
+    width: 780px;
 }

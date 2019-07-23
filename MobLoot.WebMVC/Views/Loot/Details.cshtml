@@ -4,36 +4,34 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>LootDetails</h4>
+    <h4 class="titles">Loot Details</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        <dt class="boxtext">
             @Html.DisplayNameFor(model => model.LootName)
         </dt>
 
-        <dd>
+        <dd class="boxtext" style="text-align: left;">
             @Html.DisplayFor(model => model.LootName)
         </dd>
-
-        <dt>
+        <hr />
+        <dt class="boxtext">
             @Html.DisplayNameFor(model => model.LootDesc)
-        </dt> 
+        </dt>
 
-        <dd>
+        <dd class="boxtext" style="text-align: left;">
             @Html.DisplayFor(model => model.LootDesc)
         </dd>
-
-        <dt>
+        <hr />
+        <dt class="boxtext">
             @Html.DisplayNameFor(model => model.MonsterName)
         </dt>
 
-        <dd>
+        <dd class="boxtext" style="text-align: left;">
             @Html.DisplayFor(model => model.MonsterName)
         </dd>
-
+        <hr />
     </dl>
 </div>
 <p>
